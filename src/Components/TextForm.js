@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { GrammarlyEditorPlugin } from "@grammarly/editor-sdk-react";
 
 // what I can add extra is  -> Fonst style, grammar & spell check
 
@@ -33,6 +32,14 @@ export default function TextForm(props) {
     props.showAlert("Converted to Alternate Design", "success");
   };
 
+  const handleCopy = () => {
+    const textCopied = document.querySelector("#textbox1");
+    textCopied.select();
+    navigator.clipboard.writeText(textCopied.value);
+    document.getSelection().removeAllRanges();
+    props.showAlert("Copied to clipboard", "success");
+  };
+
   const handleSpeakClick = (speechText) => {
     speechText.text = text;
     window.speechSynthesis.speak(speechText);
@@ -53,35 +60,53 @@ export default function TextForm(props) {
       <div className="container" style={{ color: styleinvert }}>
         <h1>{props.heading} </h1>
         <div className="mb-3">
-          <GrammarlyEditorPlugin clientId="client_TPqL9uCRo36PLbTs3Kg5wg">
-            <textarea
-              className="form-control"
-              placeholder="Enter Text here"
-              style={{ backgroundColor: style, color: styleinvert }}
-              value={text}
-              onChange={onChangeHandler}
-              id="exampleFormControlTextarea1"
-              rows="8"
-            ></textarea>
-          </GrammarlyEditorPlugin>
+          <textarea
+            className="form-control"
+            placeholder="Enter Text here"
+            style={{ backgroundColor: style, color: styleinvert }}
+            value={text}
+            onChange={onChangeHandler}
+            id="textbox1"
+            rows="8"
+          ></textarea>
         </div>
-        <button className="btn btn-primary" onClick={convertUpper}>
+        <button
+          disabled={text.length === 0}
+          className="btn btn-primary my-1"
+          onClick={convertUpper}
+        >
           to UpperCase
         </button>
-        <button className="btn btn-success mx-3" onClick={convertLower}>
+        <button
+          disabled={text.length === 0}
+          className="btn btn-success mx-3 my-1"
+          onClick={convertLower}
+        >
           to LowerCase
         </button>
-        <button className="btn btn-danger " onClick={handleAlternateCLick}>
+        <button
+          disabled={text.length === 0}
+          className="btn btn-danger my-1"
+          onClick={handleAlternateCLick}
+        >
           aLtErNaTe TeXt
         </button>
         <button
-          className="btn btn-dark mx-3"
+          disabled={text.length === 0}
+          className="btn btn-warning mx-3 my-1"
+          onClick={handleCopy}
+        >
+          Copy text
+        </button>
+        <button
+          disabled={text.length === 0}
+          className="btn btn-dark mx-1 my-1"
           onClick={() => handleSpeakClick(speechText)}
         >
           Text to Speech
         </button>
       </div>
-      <div className="container my-5" style={{ color: styleinvert }}>
+      <div className="container my-5 my-1" style={{ color: styleinvert }}>
         <h3>You text Summary</h3>
         <p>
           {wordCount(text)} Word(s) & {text.length} Char{" "}

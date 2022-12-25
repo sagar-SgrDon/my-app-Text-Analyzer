@@ -40,7 +40,7 @@ function App() {
       <Router>
         <Navbar
           title="Text Analyzer"
-          dropdown="Features"
+          dropdown="Features(Coming Soon)"
           mode={mode}
           toggleMode={toggleMode}
         />

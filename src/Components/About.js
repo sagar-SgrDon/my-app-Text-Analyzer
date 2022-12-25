@@ -16,7 +16,7 @@ export default function About(props) {
             aria-expanded="true"
             aria-controls="panelsStayOpen-collapseOne"
           >
-            About This Website
+            <strong> About This Website</strong>
           </button>
         </h2>
         <div
@@ -28,20 +28,10 @@ export default function About(props) {
             className="accordion-body"
             style={{ backgroundColor: style, color: styleInvert }}
           >
-            <strong>
-              This is a website used to manipulate text You can paste your Text
-              here and change it to UPPER CASE, lower case, for social media
-              alternate pattern design and even Text to Speech is also
-              available. So, Hurry! up, don't wait and try it out. This has
-              inbuilt Grammar & spell check feature also
-            </strong>
-            . [Extra Text] It is shown by default, until the collapse plugin
-            adds the appropriate classes that we use to style each element.
-            These classes control the overall appearance, as well as the showing
-            and hiding via CSS transitions. You can modify any of this with
-            custom CSS or overriding our default variables. It's also worth
-            noting that just about any HTML can go within the .accordion-body,
-            though the transition does limit overflow.
+            This is a website used to manipulate text You can paste your Text
+            here and change it to UPPER CASE, lower case, for social media
+            alternate pattern design and even Text to Speech is also available.
+            So, Hurry! up, don't wait and try it out. More Features Coming Soon.
           </div>
         </div>
       </div>
@@ -56,7 +46,7 @@ export default function About(props) {
             aria-expanded="false"
             aria-controls="panelsStayOpen-collapseTwo"
           >
-            About Me
+            <strong> About Me</strong>
           </button>
         </h2>
         <div
@@ -68,16 +58,10 @@ export default function About(props) {
             className="accordion-body"
             style={{ backgroundColor: style, color: styleInvert }}
           >
-            <strong>
-              I am Sagar, the developer of this website. I am an Electronics
-              Engineer but switched to Computer Science because of interest in
-              playing with computers and manipulating softwares related to
-              computers.{" "}
-            </strong>
-            You can modify any of this with custom CSS or overriding our default
-            variables. It's also worth noting that just about any HTML can go
-            within the .accordion-body, though the transition does limit
-            overflow.
+            I am Sagar, the developer of this website. I am an Electronics
+            Engineer but switched to Computer Science because of interest in
+            playing with computers and manipulating softwares. Currently doing
+            Post Graduation in Artificial Intelligence and Machine Learning.
           </div>
         </div>
       </div>
@@ -92,7 +76,7 @@ export default function About(props) {
             aria-expanded="false"
             aria-controls="panelsStayOpen-collapseThree"
           >
-            Merry Christmas
+            <strong> Merry Christmas</strong>
           </button>
         </h2>
         <div
@@ -104,14 +88,9 @@ export default function About(props) {
             className="accordion-body"
             style={{ backgroundColor: style, color: styleInvert }}
           >
-            <strong>This is the third item's accordion body.</strong> It is
-            hidden by default, until the collapse plugin adds the appropriate
-            classes that we use to style each element. These classes control the
-            overall appearance, as well as the showing and hiding via CSS
-            transitions. You can modify any of this with custom CSS or
-            overriding our default variables. It's also worth noting that just
-            about any HTML can go within the .accordion-body, though the
-            transition does limit overflow.
+            {
+              "We wish you a Merry Christmas and Happy New Year 2023 ☃️⛄🎄🎄❄️."
+            }
           </div>
         </div>
       </div>
