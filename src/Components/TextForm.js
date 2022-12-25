@@ -27,7 +27,7 @@ export default function TextForm(props) {
     let textAlt = "";
     for (let i = 0; i < text.length; i++) {
       if (i % 2 === 0) textAlt += text[i].toUpperCase();
-      else textAlt += text[i];
+      else textAlt += text[i].toLowerCase();
     }
     setText(textAlt);
     props.showAlert("Converted to Alternate Design", "success");
