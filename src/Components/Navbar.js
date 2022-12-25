@@ -67,14 +67,17 @@ export default function Navbar(props) {
               </ul>
             </li>
           </ul>
-          <form className="d-flex" role="search">
+          <form className="d-flex mx-2" role="search">
             <input
               className="form-control me-1"
               type="search"
               placeholder="Search"
               aria-label="Search"
             />
-            <button className="btn btn-outline-danger btn-light" type="submit">
+            <button
+              className="btn btn-outline-danger mx-2 btn-light"
+              type="submit"
+            >
               Search
             </button>
           </form>
@@ -88,7 +91,7 @@ export default function Navbar(props) {
               id="flexSwitchCheckDefault"
             />
             <label
-              className={`form-check-label mx-2  text-${
+              className={`form-check-label   text-${
                 props.mode === "light" ? "dark" : "light"
               }`}
               htmlFor="flexSwitchCheckDefault"
