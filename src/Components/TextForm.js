@@ -33,10 +33,7 @@ export default function TextForm(props) {
   };
 
   const handleCopy = () => {
-    const textCopied = document.querySelector("#textbox1");
-    textCopied.select();
-    navigator.clipboard.writeText(textCopied.value);
-    document.getSelection().removeAllRanges();
+    navigator.clipboard.writeText(text);
     props.showAlert("Copied to clipboard", "success");
   };
 
@@ -51,7 +48,7 @@ export default function TextForm(props) {
   };
 
   const wordCount = (str) =>
-    str.split(" ").filter(function (n) {
+    str.split(/\s+/).filter(function (n) {
       return n !== "";
     }).length;
 
